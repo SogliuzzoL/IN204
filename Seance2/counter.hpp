@@ -26,6 +26,8 @@ public:
   void set(unsigned value);
 
   void setMax(unsigned value);
+
+  void print();
 };
 
 #endif

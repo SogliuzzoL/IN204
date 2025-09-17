@@ -1,3 +1,4 @@
+#include "advcounter.hpp"
 #include "backwardcounter.hpp"
 #include "bicounter.hpp"
 #include "bidicounter.hpp"
@@ -60,7 +61,38 @@ void testFamilyOfCounters() {
   }
 }
 
+void testNewIncMethod() {
+  MyBiCounter bidiCounter1(0, 5);
+  for (unsigned i = 0; i <= 5; i++) {
+    bidiCounter1.increment(5);
+    bidiCounter1.print();
+  }
+}
+
+void testOldIncMethod() {
+  MyBiCounter bidiCounter1(0, 5);
+  for (unsigned i = 0; i <= 5; i++) {
+    bidiCounter1.increment();
+    bidiCounter1.print();
+  }
+}
+
+void testMyAdvCounter() {
+  MyAdvCounter incCounter(0, 4);
+  for (int i = 0; i < 6; i++) {
+    incCounter.increment();
+    incCounter.print();
+  }
+}
+
+void testCounter(MyCounter &unCompteur) {
+  for (int i = 0; i < 6; i++) {
+    unCompteur.increment();
+    unCompteur.print();
+  }
+}
+
 int main() {
-  testFamilyOfCounters();
+  testMyAdvCounter();
   return 0;
 }

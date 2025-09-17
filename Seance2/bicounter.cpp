@@ -17,4 +17,9 @@ void MyBiCounter::decrement() {
     counter--;
 }
 
-void MyBiCounter::print() { std::cout << counter << "/" << max << std::endl; }
+void MyBiCounter::increment(uint value) {
+  if (counter + value <= max)
+    counter = counter + value;
+  else
+    counter = (counter + value) % (max + 1);
+}

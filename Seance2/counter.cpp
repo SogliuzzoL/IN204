@@ -39,3 +39,5 @@ void MyCounter::setMax(unsigned value) {
     counter = 0;
   max = value;
 }
+
+void MyCounter::print() { std::cout << counter << "/" << max << std::endl; }
